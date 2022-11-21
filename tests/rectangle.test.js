@@ -21,6 +21,7 @@ test("should return positive area", ()=> {
 })
 
 test("should return valid text info", ()=> {
-    let rectTextInfo = getRectangleInfo(3,5);
-    expect(rectTextInfo).toBe(`The perimeter of a rectangle is 16 and the area is 15`);
+    console.log = jest.fn();
+    getRectangleInfo(3,5);
+    expect(console.log).toHaveBeenCalledWith('The perimeter of a rectangle is 16 and the area is 15');
 })
